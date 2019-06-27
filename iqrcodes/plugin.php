@@ -679,7 +679,7 @@ function iqrcode_dot_qr( $request ) {
         $pattern = yourls_make_regexp_pattern( yourls_get_shorturl_charset() );
         
         // Shorturl is like bleh.qr?
-        if( preg_match( "@^([$pattern]+)\.qr?/?$@", $request[0], $matches ) ) {
+	if( preg_match( "@^([$pattern]+)\!?/?$@", $request[0], $matches ) ) {
                 // this shorturl exists?
                 $keyword = yourls_sanitize_keyword( $matches[1] );
                 if( yourls_is_shorturl( $keyword ) ) {
